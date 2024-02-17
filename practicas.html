@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/svg" href="images/shield-halved-solid.svg">
+    <title>Menú</title>
+    <link rel="stylesheet" href="style/index_style.css">
+    <style>
+        /* Estilos CSS personalizados para los detalles del menú */
+        .detalle-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .detalle-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .detalle-item details {
+            border: 1px solid orangered;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: orangered;
+            cursor: pointer;
+            display: inline-block; /* Ajuste para que se muestre en línea */
+            margin-top: 10px; /* Espacio entre cada conjunto de detalles */
+        }
+
+        .detalle-item summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .detalle-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .detalle-item ul li {
+            margin-bottom: 5px;
+        }
+
+        .detalle-item ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+            display: block; /* Ajuste para mostrar los elementos de la lista en bloques */
+            padding: 5px; /* Ajuste para añadir espacio entre elementos */
+        }
+
+        .detalle-item ul li a:hover {
+            color: black;
+            background-color: #f0f0f0; /* Cambio de color de fondo al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" onclick="showContent()">Principal</a>
+        <a href="objetivo.html" onclick="showContent();">Objetivo</a>
+        <a href="mision.html" onclick="showContent();">Mision</a>
+        <a href="vision.html" onclick="showContent();">Vision</a>
+        <a href="competencias.html" onclick="showContent();">Competencias</a>
+        <a href="temas.html" onclick="showContent();">Temas de la Materia</a>
+        <a href="#" onclick="showPracticas();">Practicas</a>
+    </nav>
+
+    <div id="practicas-lista" style="display: none;">
+        <ul class="detalle-lista">
+            <li class="detalle-item">
+                <details>
+                    <summary>Parcial 1</summary>
+                    <ul>
+                        <li><a href="#" onclick="showContent('Parcial1_Practica1')">Práctica 1</a></li>
+                        <li><a href="#" onclick="showContent('Parcial1_Practica2')">Práctica 2</a></li>
+                        <!-- Agrega más opciones para las demás prácticas -->
+                    </ul>
+                </details>
+            </li>
+            <li class="detalle-item">
+                <details>
+                    <summary>Parcial 2</summary>
+                    <ul>
+                        <li><a href="#" onclick="showContent('Parcial2_Practica1')">Práctica 1</a></li>
+                        <li><a href="#" onclick="showContent('Parcial2_Practica2')">Práctica 2</a></li>
+                        <!-- Agrega más opciones para las demás prácticas -->
+                    </ul>
+                </details>
+            </li>
+            <li class="detalle-item">
+                <details>
+                    <summary>Parcial 3</summary>
+                    <ul>
+                        <li><a href="#" onclick="showContent('Parcial3_Practica1')">Práctica 1</a></li>
+                        <li><a href="#" onclick="showContent('Parcial3_Practica2')">Práctica 2</a></li>
+                        <!-- Agrega más opciones para las demás prácticas -->
+                    </ul>
+                </details>
+            </li>
+        </ul>
+    </div>
+
+    <div id="temas"></div> <!-- Este es el elemento donde se mostrará el contenido -->
+
+    <script>
+        function showContent(practica) {
+            var temas = document.getElementById("temas"); // Corregido: Obtén el elemento "temas"
+            switch (practica) {
+                case "Parcial1_Practica1":
+                    temas.innerHTML = "<p>Contenido de la Práctica 1 del Parcial 1</p>";
+                    break;
+                case "Parcial1_Practica2":
+                    temas.innerHTML = "<p>Contenido de la Práctica 2 del Parcial 1</p>";
+                    break;
+                case "Parcial2_Practica1":
+                    temas.innerHTML = "<p>Contenido de la Práctica 1 del Parcial 2</p>";
+                    break;
+                case "Parcial2_Practica2":
+                    temas.innerHTML = "<p>Contenido de la Práctica 2 del Parcial 2</p>";
+                    break;
+                case "Parcial3_Practica1":
+                    temas.innerHTML = "<p>Contenido de la Práctica 1 del Parcial 3</p>";
+                    break;
+                case "Parcial3_Practica2":
+                    temas.innerHTML = "<p>Contenido de la Práctica 2 del Parcial 3</p>";
+                    break;
+                default:
+                    temas.innerHTML = "<p>Selecciona una práctica</p>";
+            }
+        }
+
+        function showPracticas() {
+            var practicasLista = document.getElementById("practicas-lista");
+            if (practicasLista.style.display === "none") {
+                practicasLista.style.display = "block";
+            } else {
+                practicasLista.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
