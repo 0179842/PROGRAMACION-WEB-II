@@ -5,54 +5,37 @@
     <title>Menú</title>
     <link rel="stylesheet" href="index_style.css">
     <style>
-        /* Estilos CSS personalizados para los detalles del menú */
-        .detalle-lista {
-            list-style: none;
-            padding: 0;
+body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: orange;
             margin: 0;
+            padding: 0;
         }
-
-        .detalle-item {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .detalle-item details {
-            border: 1px solid orangered;
+        details {
+            margin: 20px;
+            padding: 10px;
+            background-color: wheat;
             border-radius: 5px;
-            padding: 5px 10px;
-            background-color: orangered;
-            cursor: pointer;
-            display: inline-block; /* Ajuste para que se muestre en línea */
-            margin-top: 10px; /* Espacio entre cada conjunto de detalles */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .detalle-item summary {
+        summary {
             font-weight: bold;
             cursor: pointer;
         }
-
-        .detalle-item ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
         }
-
-        .detalle-item ul li {
+        li {
             margin-bottom: 5px;
         }
-
-        .detalle-item ul li a {
+        a {
             text-decoration: none;
             color: #333;
             transition: color 0.3s ease;
-            display: block; /* Ajuste para mostrar los elementos de la lista en bloques */
-            padding: 5px; /* Ajuste para añadir espacio entre elementos */
         }
-
-        .detalle-item ul li a:hover {
-            color: black;
-            background-color: #f0f0f0; /* Cambio de color de fondo al pasar el mouse */
+        a:hover {
+            color: #007bff;
         }
     </style>
 </head>
@@ -64,83 +47,38 @@
         <a href="vision.html" onclick="showContent();">Vision</a>
         <a href="competencias.html" onclick="showContent();">Competencias</a>
         <a href="temas.html" onclick="showContent();">Temas de la Materia</a>
-        <a href="practicas.html" onclick="showContent();">Prácticas</a>
-        <a href="examenes.html" onclick="showContent();">Exámenes</a>
+        <a href="practicas.html" onclick="showPracticas();">Prácticas</a>
+        <a href="examenes.html" onclick="showExamenes();">Exámenes</a>
     </nav>
-
-
-    <div id="practicas-lista" style="display: none;">
-        <ul class="detalle-lista">
-            <li class="detalle-item">
-                <details>
+    <body>
+        <details>
+            <summary>Parciales</summary>
+            <ul>
+                <li><details>
                     <summary>Parcial 1</summary>
                     <ul>
-                        <li><a href="venta_autos_vw.html" onclick="showContent('Parcial1_Practica1')">Práctica 1 (Venta de autos Volkswagen)</a></li>
-                        <li><a href="biblioteca.html" onclick="showContent('Parcial1_Practica2')">Práctica 2 (Biblioteca)</a></li>
-                        <!-- Agrega más opciones para las demás prácticas -->
+                        <li><a href="venta_autos_vw.html">Práctica 1</a></li>
+                        <li><a href="biblioteca.html">Práctica 2</a></li>
+                        <li><a href="practica3.html">Práctica 3</a></li>
                     </ul>
-                </details>
-            </li>
-            <li class="detalle-item">
-                <details>
+                </details></li>
+                <li><details>
                     <summary>Parcial 2</summary>
                     <ul>
-                        <li><a href="registroPersonal.html" onclick="showContent('Parcial2_Practica1')">Práctica 1 (Formulario Registro de Personal)</a></li>
-                        <li><a href="#" onclick="showContent('Parcial2_Practica2')">Práctica 2</a></li>
-                        <!-- Agrega más opciones para las demás prácticas -->
+                        <li><a href="registroPersonal.html">Práctica 4</a></li>
+                        <li><a href="practica5.html">Práctica 5</a></li>
+                        <li><a href="practica6.html">Práctica 6</a></li>
                     </ul>
-                </details>
-            </li>
-            <li class="detalle-item">
-                <details>
+                </details></li>
+                <li><details>
                     <summary>Parcial 3</summary>
                     <ul>
-                        <li><a href="#" onclick="showContent('Parcial3_Practica1')">Práctica 1</a></li>
-                        <li><a href="#" onclick="showContent('Parcial3_Practica2')">Práctica 2</a></li>
-                        <!-- Agrega más opciones para las demás prácticas -->
+                        <li><a href="practica7.html">Práctica 7</a></li>
+                        <li><a href="practica8.html">Práctica 8</a></li>
+                        <li><a href="practica9.html">Práctica 9</a></li>
                     </ul>
-                </details>
-            </li>
-        </ul>
+                </details></li>
+            </ul>
+        </details>
     </div>
-
-    <div id="temas"></div> <!-- Este es el elemento donde se mostrará el contenido -->
-
-    <script>
-        function showContent(practica) {
-            var temas = document.getElementById("temas"); // Corregido: Obtén el elemento "temas"
-            switch (practica) {
-                case "Parcial1_Practica1":
-                    temas.innerHTML = "<a href='venta_autos_vw.html'>Venta de autos Volkswagen</a>";
-                    break;
-                case "Parcial1_Practica2":
-                    temas.innerHTML = "<a href='biblioteca.html'>Biblioteca</a>";
-                    break;
-                case "Parcial2_Practica1":
-                    temas.innerHTML = "<a href='registroPersonal.html'>Registro de Personal</a>";
-                    break;
-                case "Parcial2_Practica2":
-                    temas.innerHTML = "<p>Contenido de la Práctica 2 del Parcial 2</p>";
-                    break;
-                case "Parcial3_Practica1":
-                    temas.innerHTML = "<p>Contenido de la Práctica 1 del Parcial 3</p>";
-                    break;
-                case "Parcial3_Practica2":
-                    temas.innerHTML = "<p>Contenido de la Práctica 2 del Parcial 3</p>";
-                    break;
-                default:
-                    temas.innerHTML = "<p>Selecciona una práctica</p>";
-            }
-        }
-
-        function showContent() {
-            var practicasLista = document.getElementById("practicas-lista");
-            if (practicasLista.style.display === "none") {
-                practicasLista.style.display = "block";
-            } else {
-                practicasLista.style.display = "none";
-            }
-        }
-    </script>
 </body>
-</html>
